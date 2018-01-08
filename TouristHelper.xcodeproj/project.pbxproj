@@ -12,6 +12,7 @@
 		DFC3F113200396C300BE1061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC3F111200396C300BE1061 /* LaunchScreen.storyboard */; };
 		DFC3F11E200396C400BE1061 /* TouristHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC3F11D200396C400BE1061 /* TouristHelperTests.swift */; };
 		DFC3F12E200398E600BE1061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC3F12D200398E600BE1061 /* AppDelegate.swift */; };
+		DFC3F130200399D300BE1061 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC3F12F200399D300BE1061 /* MapController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		DFC3F11D200396C400BE1061 /* TouristHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristHelperTests.swift; sourceTree = "<group>"; };
 		DFC3F11F200396C400BE1061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFC3F12D200398E600BE1061 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DFC3F12F200399D300BE1061 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		DFC3F129200397A400BE1061 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DFC3F12F200399D300BE1061 /* MapController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFC3F130200399D300BE1061 /* MapController.swift in Sources */,
 				DFC3F12E200398E600BE1061 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
