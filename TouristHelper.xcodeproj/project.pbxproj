@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		33A5ACA008F47B050DA42823 /* Pods_TouristHelperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F13289D9EB9FE37E8BF57AE /* Pods_TouristHelperTests.framework */; };
 		C01AEA6291D0E738314DA1F5 /* Pods_TouristHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0F88C6AF1FC499947C4FBF /* Pods_TouristHelper.framework */; };
+		DF74D16E2004FD240072F671 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D16D2004FD240072F671 /* APIResponse.swift */; };
+		DF74D1702004FE940072F671 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D16F2004FE940072F671 /* Result.swift */; };
+		DF74D1722004FEE30072F671 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1712004FEE30072F671 /* Geometry.swift */; };
+		DF74D1742004FF2D0072F671 /* OpeningHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1732004FF2D0072F671 /* OpeningHour.swift */; };
+		DF74D1762004FF6F0072F671 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1752004FF6F0072F671 /* Photo.swift */; };
+		DF74D1782004FFC50072F671 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1772004FFC50072F671 /* Location.swift */; };
+		DF74D17A200500090072F671 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D179200500090072F671 /* Viewport.swift */; };
 		DFC3F10E200396C300BE1061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC3F10C200396C300BE1061 /* Main.storyboard */; };
 		DFC3F110200396C300BE1061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFC3F10F200396C300BE1061 /* Assets.xcassets */; };
 		DFC3F113200396C300BE1061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC3F111200396C300BE1061 /* LaunchScreen.storyboard */; };
@@ -34,6 +41,13 @@
 		9587B1CD66C6E52931C6125A /* Pods-TouristHelperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristHelperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouristHelperTests/Pods-TouristHelperTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B15AEA90545F0180000D5CEC /* Pods-TouristHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouristHelper/Pods-TouristHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		D03A0EF85D4240D34AD6F42E /* Pods-TouristHelperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristHelperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouristHelperTests/Pods-TouristHelperTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF74D16D2004FD240072F671 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		DF74D16F2004FE940072F671 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		DF74D1712004FEE30072F671 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		DF74D1732004FF2D0072F671 /* OpeningHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHour.swift; sourceTree = "<group>"; };
+		DF74D1752004FF6F0072F671 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		DF74D1772004FFC50072F671 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		DF74D179200500090072F671 /* Viewport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
 		DFC3F105200396C300BE1061 /* TouristHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouristHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC3F10D200396C300BE1061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFC3F10F200396C300BE1061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,6 +180,13 @@
 		DFC3F12C2003980100BE1061 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DF74D16D2004FD240072F671 /* APIResponse.swift */,
+				DF74D16F2004FE940072F671 /* Result.swift */,
+				DF74D1712004FEE30072F671 /* Geometry.swift */,
+				DF74D1732004FF2D0072F671 /* OpeningHour.swift */,
+				DF74D1752004FF6F0072F671 /* Photo.swift */,
+				DF74D1772004FFC50072F671 /* Location.swift */,
+				DF74D179200500090072F671 /* Viewport.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,9 +369,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TouristHelper/Pods-TouristHelper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -382,8 +406,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF74D1762004FF6F0072F671 /* Photo.swift in Sources */,
 				DFC3F130200399D300BE1061 /* MapController.swift in Sources */,
+				DF74D1782004FFC50072F671 /* Location.swift in Sources */,
 				DFC3F12E200398E600BE1061 /* AppDelegate.swift in Sources */,
+				DF74D1742004FF2D0072F671 /* OpeningHour.swift in Sources */,
+				DF74D1702004FE940072F671 /* Result.swift in Sources */,
+				DF74D17A200500090072F671 /* Viewport.swift in Sources */,
+				DF74D16E2004FD240072F671 /* APIResponse.swift in Sources */,
+				DF74D1722004FEE30072F671 /* Geometry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
