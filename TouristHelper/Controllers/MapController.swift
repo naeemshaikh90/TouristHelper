@@ -11,6 +11,8 @@ import GoogleMaps
 
 class MapController: UIViewController {
   
+  @IBOutlet var mapView: GMSMapView!
+  
   let locationManager = CLLocationManager()
   var currentLocation = CLLocationCoordinate2D()
 }
@@ -43,5 +45,11 @@ extension MapController: CLLocationManagerDelegate {
       currentLocation = location
       locationManager.stopUpdatingLocation()
     }
+  }
+}
+
+// MARK: - GMSMapViewDelegate
+extension MapController: GMSMapViewDelegate {
+  func initMap() {
   }
 }
