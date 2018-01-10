@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMaps
+import Alamofire
+import ObjectMapper
 
 class MapController: UIViewController {
   
@@ -22,6 +24,18 @@ extension MapController {
     super.viewDidLoad()
     
     grabUserLocation()
+    fetchPlaces()
+  }
+  
+  func fetchPlaces() {
+    Alamofire.request("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=point_of_interest&key=AIzaSyAm5kZPbrSvRL29nmHxR7tdWWLF95gK7E8").responseJSON { response in
+      
+      if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+        let apiResponse = Mapper<APIResponse>().map(JSONString: utf8Text)
+        debugPrint(apiResponse)
+      }
+      
+    }
   }
 }
 

@@ -16,10 +16,24 @@
 		DF74D1762004FF6F0072F671 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1752004FF6F0072F671 /* Photo.swift */; };
 		DF74D1782004FFC50072F671 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1772004FFC50072F671 /* Location.swift */; };
 		DF74D17A200500090072F671 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D179200500090072F671 /* Viewport.swift */; };
+		DF74D17F20052CFA0072F671 /* MockLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D17E20052CFA0072F671 /* MockLoader.swift */; };
+		DF74D1812005EDDA0072F671 /* ViewportSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1802005EDDA0072F671 /* ViewportSpec.swift */; };
+		DF74D1832005EDE60072F671 /* LocationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1822005EDE60072F671 /* LocationSpec.swift */; };
+		DF74D1852005EDFC0072F671 /* APIResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1842005EDFC0072F671 /* APIResponseSpec.swift */; };
+		DF74D1872005EE060072F671 /* ResultSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1862005EE060072F671 /* ResultSpec.swift */; };
+		DF74D1892005EE230072F671 /* GeometrySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D1882005EE230072F671 /* GeometrySpec.swift */; };
+		DF74D18B2005EE320072F671 /* OpeningHourSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D18A2005EE320072F671 /* OpeningHourSpec.swift */; };
+		DF74D18D2005EE5D0072F671 /* PhotoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF74D18C2005EE5D0072F671 /* PhotoSpec.swift */; };
+		DF74D18F2005F2C10072F671 /* APIResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = DF74D18E2005F2C10072F671 /* APIResponse.json */; };
+		DF74D1912005F5180072F671 /* Result.json in Resources */ = {isa = PBXBuildFile; fileRef = DF74D1902005F5180072F671 /* Result.json */; };
+		DF74D1932005F7A90072F671 /* Geometry.json in Resources */ = {isa = PBXBuildFile; fileRef = DF74D1922005F7A90072F671 /* Geometry.json */; };
+		DF74D1952005F8580072F671 /* OpeningHour.json in Resources */ = {isa = PBXBuildFile; fileRef = DF74D1942005F8580072F671 /* OpeningHour.json */; };
+		DF74D1972005F8B40072F671 /* Photo.json in Resources */ = {isa = PBXBuildFile; fileRef = DF74D1962005F8B40072F671 /* Photo.json */; };
+		DF74D1992005F8BF0072F671 /* Location.json in Resources */ = {isa = PBXBuildFile; fileRef = DF74D1982005F8BF0072F671 /* Location.json */; };
+		DF74D19B2005F8CB0072F671 /* Viewport.json in Resources */ = {isa = PBXBuildFile; fileRef = DF74D19A2005F8CB0072F671 /* Viewport.json */; };
 		DFC3F10E200396C300BE1061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC3F10C200396C300BE1061 /* Main.storyboard */; };
 		DFC3F110200396C300BE1061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFC3F10F200396C300BE1061 /* Assets.xcassets */; };
 		DFC3F113200396C300BE1061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC3F111200396C300BE1061 /* LaunchScreen.storyboard */; };
-		DFC3F11E200396C400BE1061 /* TouristHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC3F11D200396C400BE1061 /* TouristHelperTests.swift */; };
 		DFC3F12E200398E600BE1061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC3F12D200398E600BE1061 /* AppDelegate.swift */; };
 		DFC3F130200399D300BE1061 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC3F12F200399D300BE1061 /* MapController.swift */; };
 /* End PBXBuildFile section */
@@ -48,13 +62,27 @@
 		DF74D1752004FF6F0072F671 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		DF74D1772004FFC50072F671 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DF74D179200500090072F671 /* Viewport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
+		DF74D17E20052CFA0072F671 /* MockLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoader.swift; sourceTree = "<group>"; };
+		DF74D1802005EDDA0072F671 /* ViewportSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportSpec.swift; sourceTree = "<group>"; };
+		DF74D1822005EDE60072F671 /* LocationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSpec.swift; sourceTree = "<group>"; };
+		DF74D1842005EDFC0072F671 /* APIResponseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseSpec.swift; sourceTree = "<group>"; };
+		DF74D1862005EE060072F671 /* ResultSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSpec.swift; sourceTree = "<group>"; };
+		DF74D1882005EE230072F671 /* GeometrySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometrySpec.swift; sourceTree = "<group>"; };
+		DF74D18A2005EE320072F671 /* OpeningHourSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHourSpec.swift; sourceTree = "<group>"; };
+		DF74D18C2005EE5D0072F671 /* PhotoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSpec.swift; sourceTree = "<group>"; };
+		DF74D18E2005F2C10072F671 /* APIResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = APIResponse.json; sourceTree = "<group>"; };
+		DF74D1902005F5180072F671 /* Result.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Result.json; sourceTree = "<group>"; };
+		DF74D1922005F7A90072F671 /* Geometry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Geometry.json; sourceTree = "<group>"; };
+		DF74D1942005F8580072F671 /* OpeningHour.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OpeningHour.json; sourceTree = "<group>"; };
+		DF74D1962005F8B40072F671 /* Photo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Photo.json; sourceTree = "<group>"; };
+		DF74D1982005F8BF0072F671 /* Location.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Location.json; sourceTree = "<group>"; };
+		DF74D19A2005F8CB0072F671 /* Viewport.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Viewport.json; sourceTree = "<group>"; };
 		DFC3F105200396C300BE1061 /* TouristHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouristHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC3F10D200396C300BE1061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFC3F10F200396C300BE1061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFC3F112200396C300BE1061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFC3F114200396C300BE1061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFC3F119200396C400BE1061 /* TouristHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouristHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFC3F11D200396C400BE1061 /* TouristHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristHelperTests.swift; sourceTree = "<group>"; };
 		DFC3F11F200396C400BE1061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFC3F12D200398E600BE1061 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFC3F12F200399D300BE1061 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
@@ -100,6 +128,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DF74D17B200529380072F671 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DF74D18E2005F2C10072F671 /* APIResponse.json */,
+				DF74D1902005F5180072F671 /* Result.json */,
+				DF74D1922005F7A90072F671 /* Geometry.json */,
+				DF74D1942005F8580072F671 /* OpeningHour.json */,
+				DF74D1962005F8B40072F671 /* Photo.json */,
+				DF74D1982005F8BF0072F671 /* Location.json */,
+				DF74D19A2005F8CB0072F671 /* Viewport.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		DF74D17C200529460072F671 /* TestHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				DF74D17E20052CFA0072F671 /* MockLoader.swift */,
+			);
+			path = TestHelpers;
+			sourceTree = "<group>";
+		};
+		DF74D17D200529570072F671 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF74D1842005EDFC0072F671 /* APIResponseSpec.swift */,
+				DF74D1862005EE060072F671 /* ResultSpec.swift */,
+				DF74D1882005EE230072F671 /* GeometrySpec.swift */,
+				DF74D18A2005EE320072F671 /* OpeningHourSpec.swift */,
+				DF74D18C2005EE5D0072F671 /* PhotoSpec.swift */,
+				DF74D1822005EDE60072F671 /* LocationSpec.swift */,
+				DF74D1802005EDDA0072F671 /* ViewportSpec.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DFC3F0FC200396C300BE1061 = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +201,9 @@
 		DFC3F11C200396C400BE1061 /* TouristHelperTests */ = {
 			isa = PBXGroup;
 			children = (
-				DFC3F11D200396C400BE1061 /* TouristHelperTests.swift */,
+				DF74D17D200529570072F671 /* Models */,
+				DF74D17C200529460072F671 /* TestHelpers */,
+				DF74D17B200529380072F671 /* Mocks */,
 				DFC3F11F200396C400BE1061 /* Info.plist */,
 			);
 			path = TouristHelperTests;
@@ -252,6 +318,7 @@
 					};
 					DFC3F118200396C400BE1061 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DFC3F104200396C300BE1061;
 					};
@@ -291,6 +358,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF74D1912005F5180072F671 /* Result.json in Resources */,
+				DF74D1952005F8580072F671 /* OpeningHour.json in Resources */,
+				DF74D1992005F8BF0072F671 /* Location.json in Resources */,
+				DF74D18F2005F2C10072F671 /* APIResponse.json in Resources */,
+				DF74D1932005F7A90072F671 /* Geometry.json in Resources */,
+				DF74D1972005F8B40072F671 /* Photo.json in Resources */,
+				DF74D19B2005F8CB0072F671 /* Viewport.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,9 +377,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TouristHelperTests/Pods-TouristHelperTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -370,10 +451,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TouristHelper/Pods-TouristHelper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,7 +505,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFC3F11E200396C400BE1061 /* TouristHelperTests.swift in Sources */,
+				DF74D18B2005EE320072F671 /* OpeningHourSpec.swift in Sources */,
+				DF74D1852005EDFC0072F671 /* APIResponseSpec.swift in Sources */,
+				DF74D1872005EE060072F671 /* ResultSpec.swift in Sources */,
+				DF74D1892005EE230072F671 /* GeometrySpec.swift in Sources */,
+				DF74D1812005EDDA0072F671 /* ViewportSpec.swift in Sources */,
+				DF74D1832005EDE60072F671 /* LocationSpec.swift in Sources */,
+				DF74D17F20052CFA0072F671 /* MockLoader.swift in Sources */,
+				DF74D18D2005EE5D0072F671 /* PhotoSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,11 +696,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TouristHelperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.naeemshaikh90.TouristHelperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouristHelper.app/TouristHelper";
@@ -623,6 +715,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TouristHelperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
