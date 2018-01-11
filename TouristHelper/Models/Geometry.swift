@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 class Geometry {
-  var location : Location?
-  var viewport : Viewport?
+  var location: Location?
+  var viewport: Viewport?
   
   required convenience init?(map: Map) {
     self.init()

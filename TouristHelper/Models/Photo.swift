@@ -10,10 +10,10 @@ import Foundation
 import ObjectMapper
 
 class Photo {
-  var height : Int?
-  var htmlAttributions : [String]?
-  var photoReference : String?
-  var width : Int?
+  var height: Int?
+  var htmlAttributions: [String]?
+  var photoReference: String?
+  var width: Int?
   
   required convenience init?(map: Map) {
     self.init()

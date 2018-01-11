@@ -10,19 +10,19 @@ import Foundation
 import ObjectMapper
 
 class Result{
-  var geometry : Geometry?
-  var icon : String?
-  var id : String?
-  var name : String?
-  var openingHours : OpeningHour?
-  var photos : [Photo]?
-  var placeId : String?
-  var priceLevel : Int?
-  var rating : Int?
-  var reference : String?
-  var scope : String?
-  var types : [String]?
-  var vicinity : String?
+  var geometry: Geometry?
+  var icon: String?
+  var id: String?
+  var name: String?
+  var openingHours: OpeningHour?
+  var photos: [Photo]?
+  var placeId: String?
+  var priceLevel: Int?
+  var rating: Int?
+  var reference: String?
+  var scope: String?
+  var types: [String]?
+  var vicinity: String?
   
   required convenience init?(map: Map) {
     self.init()

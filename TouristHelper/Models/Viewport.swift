@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 class Viewport {
-  var northeast : Location?
-  var southwest : Location?
+  var northeast: Location?
+  var southwest: Location?
   
   required convenience init?(map: Map) {
     self.init()

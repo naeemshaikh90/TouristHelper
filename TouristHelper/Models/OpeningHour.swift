@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 class OpeningHour {
-  var openNow : Bool?
-  var weekdayText : [AnyObject]?
+  var openNow: Bool?
+  var weekdayText: [AnyObject]?
   
   required convenience init?(map: Map) {
     self.init()

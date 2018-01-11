@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 class Location {
-  var lat : Float?
-  var lng : Float?
+  var lat: Float?
+  var lng: Float?
   
   required convenience init?(map: Map) {
     self.init()
