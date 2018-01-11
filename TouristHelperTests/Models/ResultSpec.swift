@@ -42,16 +42,8 @@ class ResultSpec: QuickSpec {
         expect(result.name).toNot(beNil())
       }
       
-      it("should have openingHours") {
-        expect(result.openingHours).toNot(beNil())
-      }
-      
       it("should have placeId") {
         expect(result.placeId).toNot(beNil())
-      }
-      
-      it("should have priceLevel") {
-        expect(result.priceLevel).toNot(beNil())
       }
       
       it("should have rating") {
