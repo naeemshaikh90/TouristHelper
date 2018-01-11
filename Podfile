@@ -4,15 +4,13 @@ target 'TouristHelper' do
   use_frameworks!
   # Pods for TouristHelper
   pod 'GoogleMaps'
-  pod 'ObjectMapper'
-  pod 'Alamofire', '~> 4.5'
-
+  pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
+  
   target 'TouristHelperTests' do
     inherit! :search_paths
     # Pods for testing
     pod 'Quick'
     pod 'Nimble'
-    pod 'ObjectMapper'
   end
 
 end

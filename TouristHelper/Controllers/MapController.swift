@@ -18,6 +18,7 @@ class MapController: UIViewController {
   let locationManager = CLLocationManager()
   var currentLocation = CLLocationCoordinate2D()
   
+  var apiManager: NetworkAPICalls = NetworkAPIManager()
   var places: [Result]?
 }
 
@@ -28,14 +29,11 @@ extension MapController {
     grabUserLocation()
   }
   
-  func fetchPlaces() {
-    let urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8634,151.211&radius=1000&type=point_of_interest&key=AIzaSyAm5kZPbrSvRL29nmHxR7tdWWLF95gK7E8"
-    Alamofire.request(urlString).responseJSON { response in
-      if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-        let apiResponse = Mapper<APIResponse>().map(JSONString: utf8Text)
-        //debugPrint(apiResponse)
-        if let places = apiResponse {
-          self.places = places.results
+  func fetchPlaces(location: String, radius: Int, placeType: String) {
+    apiManager.getPlaces(location: location, radius: radius, placeType: placeType){ response in
+      if let response = response {
+        if response.status == GoogleStatusCode.OK.rawValue {
+          self.places = response.results
           DispatchQueue.main.async {
             self.plotPins(self.mapView)
           }
@@ -43,7 +41,6 @@ extension MapController {
       }
     }
   }
-  
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -66,7 +63,10 @@ extension MapController: CLLocationManagerDelegate {
       currentLocation = location
       locationManager.stopUpdatingLocation()
       setMapFocusOnUserLocation()
-      fetchPlaces()
+      
+      let locationToFindPlaces = ("\(location.latitude), \(location.longitude)")
+      let placeTypeToFind = GooglePlaceType.point_of_interest.rawValue
+      fetchPlaces(location: locationToFindPlaces, radius: kLocationRadius, placeType: placeTypeToFind)
     }
   }
 }
@@ -95,13 +95,13 @@ extension MapController: GMSMapViewDelegate {
           marker.map      = mapView
         }
       }
-      
       connectAllPins()
     }
   }
   
   func connectAllPins() {
     let path = GMSMutablePath()
+    // Source
     path.add(currentLocation)
     if let places = places {
       for place in places {
@@ -112,6 +112,7 @@ extension MapController: GMSMapViewDelegate {
         }
       }
     }
+    // Destination
     path.add(currentLocation)
     let polyline = GMSPolyline(path: path)
     polyline.strokeWidth = 5.0

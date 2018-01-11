@@ -19,10 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     initGMSServices()
     return true
   }
- 
+}
+
+extension AppDelegate {
   func initGMSServices() {
-    // Google Key
-    GMSServices.provideAPIKey("AIzaSyAm5kZPbrSvRL29nmHxR7tdWWLF95gK7E8")
+    // Google API Key
+    GMSServices.provideAPIKey(Utility.googleAPIKey())
   }
 }
 

@@ -36,6 +36,9 @@
 		DFC3F113200396C300BE1061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC3F111200396C300BE1061 /* LaunchScreen.storyboard */; };
 		DFC3F12E200398E600BE1061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC3F12D200398E600BE1061 /* AppDelegate.swift */; };
 		DFC3F130200399D300BE1061 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC3F12F200399D300BE1061 /* MapController.swift */; };
+		DFEBB8992007B99B00110857 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBB8982007B99B00110857 /* NetworkAPI.swift */; };
+		DFEBB89C2007CFBE00110857 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBB89B2007CFBE00110857 /* Utility.swift */; };
+		DFEBB89E2007D3BE00110857 /* NetworkAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBB89D2007D3BE00110857 /* NetworkAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		DFC3F11F200396C400BE1061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFC3F12D200398E600BE1061 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFC3F12F200399D300BE1061 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		DFEBB8982007B99B00110857 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		DFEBB89B2007CFBE00110857 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		DFEBB89D2007D3BE00110857 /* NetworkAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				DFC3F1282003978800BE1061 /* AppDelegate */,
+				DFEBB89A2007CFB000110857 /* Utility */,
 				DFC3F129200397A400BE1061 /* Controllers */,
 				DFC3F12B200397F500BE1061 /* Networking */,
 				DFC3F12C2003980100BE1061 /* Models */,
@@ -239,6 +246,8 @@
 		DFC3F12B200397F500BE1061 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				DFEBB8982007B99B00110857 /* NetworkAPI.swift */,
+				DFEBB89D2007D3BE00110857 /* NetworkAPIManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -255,6 +264,14 @@
 				DF74D179200500090072F671 /* Viewport.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DFEBB89A2007CFB000110857 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				DFEBB89B2007CFBE00110857 /* Utility.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,13 +395,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TouristHelperTests/Pods-TouristHelperTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
@@ -452,12 +467,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TouristHelper/Pods-TouristHelper-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -490,12 +513,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF74D1762004FF6F0072F671 /* Photo.swift in Sources */,
+				DFEBB8992007B99B00110857 /* NetworkAPI.swift in Sources */,
 				DFC3F130200399D300BE1061 /* MapController.swift in Sources */,
+				DFEBB89C2007CFBE00110857 /* Utility.swift in Sources */,
 				DF74D1782004FFC50072F671 /* Location.swift in Sources */,
 				DFC3F12E200398E600BE1061 /* AppDelegate.swift in Sources */,
 				DF74D1742004FF2D0072F671 /* OpeningHour.swift in Sources */,
 				DF74D1702004FE940072F671 /* Result.swift in Sources */,
 				DF74D17A200500090072F671 /* Viewport.swift in Sources */,
+				DFEBB89E2007D3BE00110857 /* NetworkAPIManager.swift in Sources */,
 				DF74D16E2004FD240072F671 /* APIResponse.swift in Sources */,
 				DF74D1722004FEE30072F671 /* Geometry.swift in Sources */,
 			);
@@ -657,6 +683,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B15AEA90545F0180000D5CEC /* Pods-TouristHelper.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -676,6 +703,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C468ACBF293540C7B7D9214 /* Pods-TouristHelper.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -694,7 +722,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9587B1CD66C6E52931C6125A /* Pods-TouristHelperTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -713,7 +741,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D03A0EF85D4240D34AD6F42E /* Pods-TouristHelperTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
