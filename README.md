@@ -1,5 +1,6 @@
 <p align="center">
-![](/Images/TouristHelper.png)
+    <img src="/Images/TouristHelper.png">
+    <figcaption>Image by Itty Bitty Apps</figcaption>
 </p>
 
 # Tourist Helper
