@@ -11,16 +11,22 @@ import Moya
 
 enum NetworkAPI {
   case getPlaces(location: String, radius: Int, placeType: String)
+  case getAdditionalPlaces(pageToken: String)
 }
 
 extension NetworkAPI: TargetType {
   // The target's base `URL`.
-  var baseURL: URL { return URL(string: "https://maps.googleapis.com/maps/api")! }
+  var baseURL: URL {
+    switch self {
+    case .getPlaces, .getAdditionalPlaces:
+      return URL(string: "https://maps.googleapis.com/maps/api")!
+    }
+  }
   
   // The path to be appended to `baseURL` to form the full `URL`.
   var path: String {
     switch self {
-    case .getPlaces:
+    case .getPlaces, .getAdditionalPlaces:
       return "/place/nearbysearch/json"
     }
   }
@@ -28,7 +34,7 @@ extension NetworkAPI: TargetType {
   // The HTTP method used in the request.
   var method: Moya.Method {
     switch self {
-    case .getPlaces:
+    case .getPlaces, .getAdditionalPlaces:
       return .get
     }
   }
@@ -37,14 +43,17 @@ extension NetworkAPI: TargetType {
   var parameters: [String: Any]? {
     switch self {
     case let .getPlaces(location, radius, placeType):
+      //return ["location": location, "rankby": "distance", "type": placeType, "pagetoken": pageToken, "key": Utility.googleAPIKey()]
       return ["location": location, "radius": radius, "type": placeType, "key": Utility.googleAPIKey()]
+    case .getAdditionalPlaces(let pageToken):
+      return ["pagetoken": pageToken, "key": Utility.googleAPIKey()]
     }
   }
   
   // Provides stub data for use in testing.
   var sampleData: Data {
     switch self {
-    default:
+    case .getPlaces, .getAdditionalPlaces:
       return Data()
     }
   }
@@ -52,13 +61,16 @@ extension NetworkAPI: TargetType {
   // The type of HTTP task to be performed.
   var task: Task {
     switch self {
-      default:
+      case .getPlaces, .getAdditionalPlaces:
       return .requestParameters(parameters: parameters!, encoding: URLEncoding.default)
     }
   }
   
   // The headers to be used in the request.
   var headers: [String : String]? {
-    return ["Content-type": "application/json"]
+    switch self {
+    case .getPlaces, .getAdditionalPlaces:
+      return ["Content-type": "application/json"]
+    }
   }
 }

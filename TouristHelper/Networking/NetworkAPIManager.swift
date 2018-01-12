@@ -41,7 +41,6 @@ extension NetworkAPIManager {
   fileprivate func requestObject<T: Mappable>(_ token: NetworkAPI, type: T.Type,
                                               completion: @escaping (T?) -> Void) {
     provider.rx.request(token)
-      .debug()
       .mapObject(T.self)
       .subscribe { event -> Void in
         switch event {
@@ -66,8 +65,8 @@ extension NetworkAPIManager {
         switch event {
         case .success(let parsedArray):
           completion(parsedArray)
-        case.error(let error):
-          debugPrint(error)
+        case.error( _):
+          //debugPrint(error)
           completion(nil)
         }
       }.disposed(by: disposeBag)
@@ -77,12 +76,21 @@ extension NetworkAPIManager {
 protocol NetworkAPICalls {
   func getPlaces(location: String, radius: Int, placeType: String,
                  completion: @escaping ((APIResponse?) -> Void))
+  func getAdditionalPlaces(pageToken: String,
+                           completion: @escaping ((APIResponse?) -> Void))
 }
 
 extension NetworkAPIManager: NetworkAPICalls {
   func getPlaces(location: String, radius: Int, placeType: String,
                  completion: @escaping ((APIResponse?) -> Void)) {
     requestObject(.getPlaces(location: location, radius: radius, placeType: placeType),
+                  type: APIResponse.self,
+                  completion: completion)
+  }
+  
+  func getAdditionalPlaces(pageToken: String,
+                           completion: @escaping ((APIResponse?) -> Void)) {
+    requestObject(.getAdditionalPlaces(pageToken: pageToken),
                   type: APIResponse.self,
                   completion: completion)
   }

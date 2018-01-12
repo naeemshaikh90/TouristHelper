@@ -8,10 +8,19 @@
 
 import Foundation
 import ObjectMapper
+import CoreLocation
 
 class Location {
-  var lat: Float?
-  var lng: Float?
+  var lat: CLLocationDegrees = 0.0
+  var lng: CLLocationDegrees = 0.0
+  
+  var location: CLLocation {
+    return CLLocation(latitude: self.lat, longitude: self.lng)
+  }
+  
+  func distance(to location: CLLocation) -> CLLocationDistance {
+    return location.distance(from: self.location)
+  }
   
   required convenience init?(map: Map) {
     self.init()
