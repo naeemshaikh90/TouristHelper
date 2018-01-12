@@ -16,11 +16,12 @@ class MapController: UIViewController {
   @IBOutlet var mapView: GMSMapView!
   
   let locationManager = CLLocationManager()
-  var currentLocation = CLLocationCoordinate2D()
+  var currentLocation = CLLocation()
   
   var apiManager: NetworkAPICalls = NetworkAPIManager()
   var isWebServiceCalled = false
   var places = [Result]()
+  var bounds = GMSCoordinateBounds()
 }
 
 // MARK: - View Lifecycle
@@ -44,9 +45,9 @@ extension MapController: CLLocationManagerDelegate {
   }
   
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    let locationValue = manager.location?.coordinate
-    if let location = locationValue {
-      print("Current Location: \(location.latitude), \(location.longitude)")
+    //let locationValue = manager.location
+    if let location = manager.location {
+      print("Current Location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
       currentLocation = location
       locationManager.stopUpdatingLocation()
       setMapFocusOnUserLocation()
@@ -63,8 +64,8 @@ extension MapController: CLLocationManagerDelegate {
 // MARK: - GMSMapViewDelegate
 extension MapController: GMSMapViewDelegate {
   func setMapFocusOnUserLocation() {
-    let latitude = currentLocation.latitude
-    let longitude = currentLocation.longitude
+    let latitude = currentLocation.coordinate.latitude
+    let longitude = currentLocation.coordinate.longitude
     let camera = GMSCameraPosition.camera(withLatitude: Double(latitude), longitude: Double(longitude), zoom: 15)
     mapView.camera = camera
     mapView.isMyLocationEnabled = true
@@ -72,7 +73,6 @@ extension MapController: GMSMapViewDelegate {
   }
   
   func plotPins(_ mapView: GMSMapView) {
-    var bounds = GMSCoordinateBounds()
     for place in places {
       let lat = place.geometry?.location?.lat
       let long = place.geometry?.location?.lng
@@ -87,18 +87,20 @@ extension MapController: GMSMapViewDelegate {
         marker.map      = mapView
         bounds = bounds.includingCoordinate(marker.position)
       }
-      connectAllPins()
-      
-      // Set zoom level to cover all pins
-      let update = GMSCameraUpdate.fit(bounds, withPadding: 100)
-      mapView.animate(with: update)
     }
   }
   
+  func sortPlacesByDistance() {
+    // Sort array by distance
+    // https://stackoverflow.com/a/35200027/3859370
+    places.sort(by: { $0.geometry!.location!.distance(to: currentLocation) < $1.geometry!.location!.distance(to: currentLocation) })
+  }
+  
   func connectAllPins() {
+    sortPlacesByDistance()
+    
     let path = GMSMutablePath()
-    // Source
-    path.add(currentLocation)
+    path.add(currentLocation.coordinate) // Source
     for place in places {
       let lat = place.geometry?.location?.lat
       let long = place.geometry?.location?.lng
@@ -106,18 +108,27 @@ extension MapController: GMSMapViewDelegate {
         path.add(CLLocationCoordinate2D(latitude: Double(lat), longitude: Double(long)))
       }
     }
-    // Destination
-    path.add(currentLocation)
+    path.add(currentLocation.coordinate) // Destination
+    
     let polyline = GMSPolyline(path: path)
-    polyline.strokeWidth = 5.0
+    polyline.strokeWidth = 2.0
+    polyline.geodesic = true
     polyline.map = mapView
+    
+    setZoomLevelToCoverAllPins()
+  }
+  
+  func setZoomLevelToCoverAllPins() {
+    // Set zoom level to cover all pins
+    let update = GMSCameraUpdate.fit(bounds, withPadding: 100)
+    mapView.animate(with: update)
   }
 }
 
 // MARK: - Networking
 extension MapController {
-  func callFetchPlaces(location: CLLocationCoordinate2D) {
-    let locationToFindPlaces = ("\(location.latitude), \(location.longitude)")
+  func callFetchPlaces(location: CLLocation) {
+    let locationToFindPlaces = ("\(location.coordinate.latitude), \(location.coordinate.longitude)")
     let placeTypeToFind = GooglePlace.restaurant.type()
     fetchPlaces(location: locationToFindPlaces, radius: kLocationRadius, placeType: placeTypeToFind)
   }
@@ -149,6 +160,7 @@ extension MapController {
           self.places.append(place)
         }
         DispatchQueue.main.async {
+          debugPrint("Total Count: \(self.places.count)")
           self.plotPins(self.mapView)
           
           if let nextPageToken = response.nextPageToken {
@@ -156,8 +168,9 @@ extension MapController {
             Utility.delay(2.0) {
               self.fetchAdditionalPlaces(pageToken: nextPageToken)
             }
+          } else {
+            self.connectAllPins()
           }
-          debugPrint("Total Count: \(self.places.count)")
         }
       }
     } else {

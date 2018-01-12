@@ -1,6 +1,5 @@
 <p align="center">
     <img src="/Images/TouristHelper.png">
-    <figcaption>Image by Itty Bitty Apps</figcaption>
 </p>
 
 # Tourist Helper
@@ -50,3 +49,6 @@ Open ‘TouristHelper.xcworkspace’
     - [x] Single visit on all locations
     - [ ] Choose shortest available path
     - [x] The paths are as the crow files
+
+### Special Thanks
+Logo image Copyright © and All rights reserved to [Itty Bitty Apps](http://www.ittybittyapps.com).
