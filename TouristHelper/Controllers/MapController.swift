@@ -35,12 +35,25 @@ extension MapController {
 // MARK: - CLLocationManagerDelegate
 extension MapController: CLLocationManagerDelegate {
   func grabUserLocation() {
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
     locationManager.requestWhenInUseAuthorization()
-    
-    if CLLocationManager.locationServicesEnabled() {
-      locationManager.delegate = self
-      locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-      locationManager.startUpdatingLocation()
+    locationManager.startUpdatingLocation()
+  }
+  
+  func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    print(error.localizedDescription)
+  }
+  
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    if status == .authorizedWhenInUse || status == .authorizedAlways {
+      
+    } else {
+      print("Please grant permission for fetching geo-location");
+      
+      // Setup 'London' as default location
+      currentLocation = CLLocation(latitude: 51.50998, longitude: -0.1337)
+      setupLocationPins(using: currentLocation)
     }
   }
   
@@ -50,15 +63,20 @@ extension MapController: CLLocationManagerDelegate {
       print("Current Location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
       currentLocation = location
       locationManager.stopUpdatingLocation()
-      setMapFocusOnUserLocation()
-      
-      // To call web service only once
-      if !isWebServiceCalled {
-        isWebServiceCalled = !isWebServiceCalled
-        callFetchPlaces(location: location)
-      }
+      setupLocationPins(using: currentLocation)
     }
   }
+  
+  func setupLocationPins(using location: CLLocation) {
+    setMapFocusOnUserLocation()
+    
+    // To call web service only once
+    if !isWebServiceCalled {
+      isWebServiceCalled = !isWebServiceCalled
+      callFetchPlaces(location: location)
+    }
+  }
+  
 }
 
 // MARK: - GMSMapViewDelegate
@@ -136,19 +154,7 @@ extension MapController {
   func fetchPlaces(location: String, radius: Int, placeType: String) {
     apiManager.getPlaces(location: location, radius: radius, placeType: placeType){ response in
       if let response = response {
-        Utility.delay(1.0) {
-          self.parseAPIResponse(response: response)
-        }
-      }
-    }
-  }
-  
-  func fetchAdditionalPlaces(pageToken: String) {
-    apiManager.getAdditionalPlaces(pageToken: pageToken) { response in
-      if let response = response {
-        Utility.delay(1.0) {
-          self.parseAPIResponse(response: response)
-        }
+        self.parseAPIResponse(response: response)
       }
     }
   }
@@ -162,15 +168,7 @@ extension MapController {
         DispatchQueue.main.async {
           debugPrint("Total Count: \(self.places.count)")
           self.plotPins(self.mapView)
-          
-          if let nextPageToken = response.nextPageToken {
-            // There is a short delay between when a 'next_page_token' is issued
-            Utility.delay(2.0) {
-              self.fetchAdditionalPlaces(pageToken: nextPageToken)
-            }
-          } else {
-            self.connectAllPins()
-          }
+          self.connectAllPins()
         }
       }
     } else {
